@@ -1,13 +1,10 @@
+import Sidebar from "./sidebar"
 import Link from 'next/link'
 
 export default function Page() {
-  return <div>
-    <div className="grid grid-cols-5 grid-rows-5 gap-4">
-      <div className="col-span-5">Header</div>
-      <div className="row-span-3 row-start-2">Playlists</div>
-      <div className="col-span-3 row-span-3 row-start-2">Main Board</div>
-      <div className="row-span-3 col-start-5 row-start-2">Music Info</div>
-      <div className="col-span-5 row-start-5">Currently Playing footer</div>
-    </div>
+  return <div className="w-full h-screen grid grid-cols-[max-content_auto] grid-rows-[5fr_1fr] gap-y-2 p-2 bg-black">
+      <Sidebar />
+      <div className="bg-neutral-700">Main Content</div>
+      <div className="col-span-2 bg-neutral-700bg-yellow-500">Player</div>
   </div>
 }
