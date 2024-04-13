@@ -6,6 +6,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
  
 type UserContextType = {
+    [x: string]: any;
     accessToken: string | null;
     user: User | null;
     userDetails: UserDetails | null;
