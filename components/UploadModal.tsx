@@ -95,6 +95,8 @@ const uploadModal = () => {
             } = await supabaseClient
                 .from('songs')
                 .insert({
+                    // @ts-ignore
+                    // The ts-ignore is here because it gives an error that does not matter. without this it ended up causing the sidebar not to function and was solved thanks to @BoMeneerNL on GitHub
                     user_id: user.user.id,
                     title: values.title,
                     author: values.author,
