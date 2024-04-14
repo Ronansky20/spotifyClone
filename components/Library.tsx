@@ -6,6 +6,7 @@ import { useUser } from "@/hooks/useUser";
 import { Song } from "@/types";
 import { AiOutlinePlus } from "react-icons/ai";
 import { TbPlaylist } from "react-icons/tb";
+import MediaItem from "./MediaItem";
 
 interface LibraryProps {
     songs: Song[];
