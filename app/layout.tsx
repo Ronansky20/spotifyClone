@@ -8,6 +8,7 @@ import ModalProvidar from "@/providers/ModalProvider";
 import ToasterProvider from "@/providers/ToasterProvider";
 
 import "./globals.css";
+import getSongsByUserId from "@/actions/getSongsByUserId";
 
 const font = Figtree({ subsets: ["latin"] });
 
@@ -16,11 +17,14 @@ export const metadata: Metadata = {
   description: "Made by Ronan Drost",
 };
 
-export default function RootLayout({
+export const revalidate = 0;
+
+export default async function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+  const userSongs = await getSongsByUserId();
   return (
     <html lang="en">
       <body className={font.className}>
@@ -28,7 +32,7 @@ export default function RootLayout({
         <SupaBaseProvider>
           <UserProvider>
             <ModalProvidar />
-            <Sidebar>
+            <Sidebar songs={userSongs}>
               {children}
             </Sidebar>
           </UserProvider>
