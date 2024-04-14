@@ -12,9 +12,9 @@ const useLoadImage = (song: Song) => {
     const { data: imageData } = supabaseClient
         .storage
         .from('images')
-        .download(song.image_path);
+        .getPublicUrl(song.image_path);
 
-    return imageData.publicURL;
+    return imageData.publicUrl;
 };
 
 export default useLoadImage;
