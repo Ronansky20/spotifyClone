@@ -45,7 +45,7 @@ const Library: React.FC<LibraryProps> = ({
             </div>
             <div className="flex flex-col gap-y-2 mt-4 px-3">
                 {songs.length === 0 ? (
-                    <div>No songs</div>
+                    <div>Please Log in.</div>
                 ) : (
                     songs.map((item) => (
                         <MediaItem 
